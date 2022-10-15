@@ -669,9 +669,13 @@ function validate(e) {
          $("#card").addClass("hide");
          $("#video-content").removeClass("hide");
          window.setTimeout(function() {
-            window.location.href = "/PersonalDG/Fifth/adventure.html";
+            window.location.href = "/dblovesgg/adventure.html";
          }, 10000);
        }, 1000);
+    } else if(!passes.includes(name)) {
+        alert("Invalid Name. Hint: Ask for marriage countdown in Pixel");
+    } else {
+        alert("Invalid Pin. Hint: Debit Card ___");
     }
     return false;
 }

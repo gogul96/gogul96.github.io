@@ -1,0 +1,1174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DG's Adventure</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Rancho&display=swap');
+
+:root {
+    --primary: #094b65;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    overflow-x: hidden;
+    background: #fff;
+    min-height: 100vh;
+}
+
+#header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+#header .logo {
+    color: var(--primary);
+    font-weight: 700;
+    font-size: 2em;
+    text-decoration: none;
+}
+
+#header ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#header ul li {
+    list-style: none;
+    margin-left: 20px;
+}
+
+#header ul li a {
+    text-decoration: none;
+    padding: 6px 15px;
+    color: var(--primary);
+    border-radius: 20px;
+}
+
+#header ul li a:hover,
+#header ul li a.active {
+    background: var(--primary);
+    color: #fff;
+}
+
+section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(to top, var(--primary), transparent);
+    z-index: 10;
+}
+
+section img {
+    position: absolute;
+    top: 0px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+}
+
+section #text {
+    position: absolute;
+    color: var(--primary);
+    font-size: 10vw;
+    text-align: center;
+    line-height: .55em;
+    font-family: 'Rancho', cursive;
+    transform: translatey(-50%);
+}
+
+section #text span {
+    font-size: .20em;
+    letter-spacing: 2px;
+    font-weight: 400;
+}
+
+#btn {
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 30px;
+    background: #fff;
+    color: var(--primary);
+    font-size: 1.2em;
+    font-weight: 500;
+    letter-spacing: 2px;
+    border-radius: 40px;
+    transform: translatey(100px);
+}
+
+.sec {
+    position: relative;
+    padding: 100px;
+    background: var(--primary);
+}
+
+.sec h2 {
+    font-size: 3.5em;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.sec p {
+    font-size: 1em;
+    color: #fff;
+}
+
+footer {
+    position: relative;
+    padding: 0px 100px;
+    background: var(--primary);
+}
+
+footer a {
+    text-decoration: none;
+    color: #fff;
+}
+section {
+  padding: 100px 0;
+}
+
+.sec-2 {
+  overflow-x: hidden;
+  font-family: "Roboto";
+  font-size: 17px;
+  font-weight: 400;
+  margin: auto 50px;
+}
+
+.sec-2 h1 {
+  font-size: 200%;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: 400;
+}
+
+.sec-2 header {
+  background: #3F51B5;
+  color: #FFFFFF;
+  padding: 150px 0;
+}
+.sec-2 header p {
+  font-family: "Allura";
+  color: rgba(255, 255, 255, 0.2);
+  margin-bottom: 0;
+  font-size: 60px;
+  margin-top: -30px;
+}
+
+.timeline {
+  position: relative;
+  padding: 100px;
+}
+.timeline::before {
+  content: "";
+  background: #C5CAE9;
+  width: 5px;
+  height: 95%;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.timeline-item {
+  width: 100%;
+  margin-bottom: 70px;
+}
+.timeline-item:nth-child(even) .timeline-content {
+  float: right;
+  padding: 40px 30px 10px 30px;
+}
+.timeline-item:nth-child(even) .timeline-content .date {
+  right: auto;
+  left: 0;
+}
+.timeline-item:nth-child(even) .timeline-content::after {
+  content: "";
+  position: absolute;
+  border-style: solid;
+  width: 0;
+  height: 0;
+  top: 30px;
+  left: -15px;
+  border-width: 10px 15px 10px 0;
+  border-color: transparent #f5f5f5 transparent transparent;
+}
+.timeline-item::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.timeline-content {
+  position: relative;
+  width: 45%;
+  padding: 10px 30px;
+  border-radius: 4px;
+  background: #f5f5f5;
+  box-shadow: 0 20px 25px -15px rgba(0, 0, 0, 0.3);
+}
+.timeline-content::after {
+  content: "";
+  position: absolute;
+  border-style: solid;
+  width: 0;
+  height: 0;
+  top: 30px;
+  right: -15px;
+  border-width: 10px 0 10px 15px;
+  border-color: transparent transparent transparent #f5f5f5;
+}
+
+.timeline-img {
+  width: 30px;
+  height: 30px;
+  background: #3F51B5;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  margin-top: 25px;
+  margin-left: -15px;
+}
+
+.sec-2 a {
+  background: #3F51B5;
+  color: #FFFFFF;
+  padding: 8px 20px;
+  text-transform: uppercase;
+  font-size: 14px;
+  margin-bottom: 20px;
+  margin-top: 10px;
+  display: inline-block;
+  border-radius: 2px;
+  box-shadow: 0 1px 3px -1px rgba(0, 0, 0, 0.6);
+}
+.sec-2 a:hover, a:active, a:focus {
+  background: #32408f;
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+.timeline-card {
+  padding: 0 !important;
+}
+.timeline-card p {
+  padding: 0 20px;
+}
+.timeline-card a {
+  margin-left: 20px;
+}
+
+.timeline-item .timeline-img-header {
+  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4)), url("https://picsum.photos/1000/800/?random") center center no-repeat;
+  background-size: cover;
+}
+
+.timeline-img-header {
+  height: 200px;
+  position: relative;
+  margin-bottom: 20px;
+}
+.timeline-img-header h2 {
+  color: #FFFFFF;
+  position: absolute;
+  bottom: 5px;
+  left: 20px;
+}
+
+.sec-2 blockquote {
+  margin-top: 30px;
+  color: #757575;
+  border-left-color: #3F51B5;
+  padding: 0 20px;
+}
+
+.date {
+  background: #FF4081;
+  display: inline-block;
+  color: #FFFFFF;
+  padding: 10px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .timeline::before {
+    left: 50px;
+  }
+  .timeline .timeline-img {
+    left: 50px;
+  }
+  .timeline .timeline-content {
+    max-width: 100%;
+    width: auto;
+    margin-left: 70px;
+  }
+  .timeline .timeline-item:nth-child(even) .timeline-content {
+    float: none;
+  }
+  .timeline .timeline-item:nth-child(odd) .timeline-content::after {
+    content: "";
+    position: absolute;
+    border-style: solid;
+    width: 0;
+    height: 0;
+    top: 30px;
+    left: -15px;
+    border-width: 10px 15px 10px 0;
+    border-color: transparent #f5f5f5 transparent transparent;
+  }
+}
+
+
+.flex-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.unit {
+  text-align: center;
+}
+.unit p {
+  margin-top: 100px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 100;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #fff;
+}
+.heart {
+  position: relative;
+  font-size: 0;
+  width: 138px;
+}
+[class*="heart-piece-"] {
+  position: absolute;
+  top: -5px;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+}
+.heart-piece-4 {
+  -webkit-animation: piece-4 3.2s infinite;
+          animation: piece-4 3.2s infinite;
+}
+.heart-piece-3,
+.heart-piece-5 {
+  -webkit-animation: piece-3 3.2s infinite;
+          animation: piece-3 3.2s infinite;
+}
+.heart-piece-2,
+.heart-piece-6 {
+  -webkit-animation: piece-2 3.2s infinite;
+          animation: piece-2 3.2s infinite;
+}
+.heart-piece-1,
+.heart-piece-7 {
+  -webkit-animation: piece-1 3.2s infinite;
+          animation: piece-1 3.2s infinite;
+}
+.heart-piece-0,
+.heart-piece-8 {
+  -webkit-animation: piece-0 3.2s infinite;
+          animation: piece-0 3.2s infinite;
+}
+.heart-piece-0 {
+  left: 0px;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+  background-color: #ec2d73;
+}
+.heart-piece-1 {
+  left: 16px;
+  -webkit-animation-delay: 0.15s;
+          animation-delay: 0.15s;
+  background-color: #eb5324;
+}
+.heart-piece-2 {
+  left: 32px;
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s;
+  background-color: #fdc800;
+}
+.heart-piece-3 {
+  left: 48px;
+  -webkit-animation-delay: 0.45s;
+          animation-delay: 0.45s;
+  background-color: #47b264;
+}
+.heart-piece-4 {
+  left: 64px;
+  -webkit-animation-delay: 0.6s;
+          animation-delay: 0.6s;
+  background-color: #1470bd;
+}
+.heart-piece-5 {
+  left: 80px;
+  -webkit-animation-delay: 0.75s;
+          animation-delay: 0.75s;
+  background-color: #76469a;
+}
+.heart-piece-6 {
+  left: 96px;
+  -webkit-animation-delay: 0.9s;
+          animation-delay: 0.9s;
+  background-color: #ec2d73;
+}
+.heart-piece-7 {
+  left: 112px;
+  -webkit-animation-delay: 1.05s;
+          animation-delay: 1.05s;
+  background-color: #eb5324;
+}
+.heart-piece-8 {
+  left: 128px;
+  -webkit-animation-delay: 1.2s;
+          animation-delay: 1.2s;
+  background-color: #fdc800;
+}
+@-webkit-keyframes piece-4 {
+  0%, 10%, 90%, 100% {
+    height: 10px;
+    top: -5px;
+  }
+  45%, 55% {
+    height: 94px;
+    top: -23px;
+  }
+}
+@keyframes piece-4 {
+  0%, 10%, 90%, 100% {
+    height: 10px;
+    top: -5px;
+  }
+  45%, 55% {
+    height: 94px;
+    top: -23px;
+  }
+}
+@-webkit-keyframes piece-3 {
+  0%, 10%, 90%, 100% {
+    height: 10px;
+    top: -5px;
+  }
+  45%, 55% {
+    height: 90px;
+    top: -31px;
+  }
+}
+@keyframes piece-3 {
+  0%, 10%, 90%, 100% {
+    height: 10px;
+    top: -5px;
+  }
+  45%, 55% {
+    height: 90px;
+    top: -31px;
+  }
+}
+@-webkit-keyframes piece-2 {
+  0%, 10%, 90%, 100% {
+    height: 10px;
+    top: -5px;
+  }
+  45%, 55% {
+    height: 80px;
+    top: -37px;
+  }
+}
+@keyframes piece-2 {
+  0%, 10%, 90%, 100% {
+    height: 10px;
+    top: -5px;
+  }
+  45%, 55% {
+    height: 80px;
+    top: -37px;
+  }
+}
+@-webkit-keyframes piece-1 {
+  0%, 10%, 90%, 100% {
+    height: 10px;
+    top: -5px;
+  }
+  45%, 55% {
+    height: 60px;
+    top: -31px;
+  }
+}
+@keyframes piece-1 {
+  0%, 10%, 90%, 100% {
+    height: 10px;
+    top: -5px;
+  }
+  45%, 55% {
+    height: 60px;
+    top: -31px;
+  }
+}
+@-webkit-keyframes piece-0 {
+  0%, 10%, 90%, 100% {
+    height: 10px;
+    top: -5px;
+  }
+  45%, 55% {
+    height: 30px;
+    top: -15px;
+  }
+}
+@keyframes piece-0 {
+  0%, 10%, 90%, 100% {
+    height: 10px;
+    top: -5px;
+  }
+  45%, 55% {
+    height: 30px;
+    top: -15px;
+  }
+}
+
+.custom-btn {
+    margin: 20px 400px;
+    width: -webkit-fill-available;
+    text-align: center;
+    /* padding: 100px; */
+    /* height: 40px; */
+    text-decoration: none;
+    color: #fff;
+    border-radius: 5px;
+    padding: 10px 25px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 500;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+}
+
+/* 11 */
+.btn-11 {
+  border: none;
+  background: rgb(251,33,117);
+    background: linear-gradient(0deg, rgba(251,33,117,1) 0%, rgba(234,76,137,1) 100%);
+    color: #fff;
+    overflow: hidden;
+}
+.btn-11:hover {
+    text-decoration: none;
+    color: #fff;
+}
+.btn-11:before {
+    position: absolute;
+    content: '';
+    display: inline-block;
+    top: -180px;
+    left: 0;
+    width: 30px;
+    height: 100%;
+    background-color: #fff;
+    animation: shiny-btn1 3s ease-in-out infinite;
+}
+.btn-11:hover{
+  opacity: .7;
+}
+.btn-11:active{
+  box-shadow:  4px 4px 6px 0 rgba(255,255,255,.3),
+              -4px -4px 6px 0 rgba(116, 125, 136, .2),
+    inset -4px -4px 6px 0 rgba(255,255,255,.2),
+    inset 4px 4px 6px 0 rgba(0, 0, 0, .2);
+}
+
+
+@-webkit-keyframes shiny-btn1 {
+    0% { -webkit-transform: scale(0) rotate(45deg); opacity: 0; }
+    80% { -webkit-transform: scale(0) rotate(45deg); opacity: 0.5; }
+    81% { -webkit-transform: scale(4) rotate(45deg); opacity: 1; }
+    100% { -webkit-transform: scale(50) rotate(45deg); opacity: 0; }
+}
+
+.scribble-text h5 {
+    font-size: 2rem;
+    color: antiquewhite;
+    font-style: italic;
+}
+
+.text {
+    color: white;
+    font-size: 4rem;
+    padding: 0px 20px;
+}
+
+.focus-in-expand-fwd {
+	-webkit-animation: focus-in-expand-fwd 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: focus-in-expand-fwd 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+/* ----------------------------------------------
+ * Generated by Animista on 2022-10-15 23:24:10
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info.
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+/**
+ * ----------------------------------------
+ * animation focus-in-expand-fwd
+ * ----------------------------------------
+ */
+@-webkit-keyframes focus-in-expand-fwd {
+  0% {
+    letter-spacing: -0.5em;
+    -webkit-transform: translateZ(-800px);
+            transform: translateZ(-800px);
+    -webkit-filter: blur(12px);
+            filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+    -webkit-filter: blur(0);
+            filter: blur(0);
+    opacity: 1;
+  }
+}
+@keyframes focus-in-expand-fwd {
+  0% {
+    letter-spacing: -0.5em;
+    -webkit-transform: translateZ(-800px);
+            transform: translateZ(-800px);
+    -webkit-filter: blur(12px);
+            filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+    -webkit-filter: blur(0);
+            filter: blur(0);
+    opacity: 1;
+  }
+}
+
+
+    </style>
+</head>
+<body>
+<header id="header">
+    <a href="#" class="logo">POETU & SOFTIE</a>
+    <ul>
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#quotes">Scribbles</a></li>
+        <li><a href="#walkthrough">Walk-Through</a></li>
+        <li><a href="#memories">Memories</a></li>
+    </ul>
+</header>
+
+<Section>
+    <h2 id="text"><span>It's time for a new</span><br>Adventure</h2>
+
+    <img src="https://user-images.githubusercontent.com/65358991/170092504-132fa547-5ced-40e5-ab64-ded61518fac2.png" id="bird1">
+    <img src="https://user-images.githubusercontent.com/65358991/170092542-9747edcc-fb51-4e21-aaf5-a61119393618.png" id="bird2">
+    <img src="https://user-images.githubusercontent.com/65358991/170092559-883fe071-eb4f-4610-8c8b-a037d061c617.png" id="forest">
+
+<!--    <a href="#" id="btn">Explore</a>-->
+
+    <img src="https://user-images.githubusercontent.com/65358991/170092605-eada6510-d556-45cc-b7fa-9e4d1d258d26.png" id="rocks">
+    <img src="https://user-images.githubusercontent.com/65358991/170092616-5a70c4af-2eed-496f-bde9-b5fcc7142a31.png" id="water">
+</Section>
+
+<div class="sec" id="quotes">
+    <h2>My Scribble</h2>
+    <div class="scribble-text">
+        <br />
+        <br />
+        <br />
+        <h5 class="focus-in-expand-fwd">You`re my emotion,</h5>
+        <h5>You`re my feeling,</h5>
+        <h5>You`re my favourite,</h5>
+        <h5>You`re my sunshine,</h5>
+        <h5>You`re my love,</h5>
+        <h5>You`re my right,</h5>
+        <h5>You`re my destiny,</h5>
+        <h5>You`re my partner in crime,</h5>
+        <h5>You`re my soulmate,</h5>
+        <h5>You`re my food,</h5>
+        <h5>You`re my <span style="color: orangered">travel companion</span>,</h5>
+        <h5>You`re my one I wish for and only you.</h5>
+
+        <h5 style="margin: 100px 0px 0px; font-size: 2.5rem;font-style: normal;color: hotpink;">I Love You. ❣️</h5>
+    </div>
+</div>
+<div class="sec-2" id="walkthrough">
+    <header style="background: transparent; padding: 150px 0px 0px 0px;">
+        <div class="container text-center">
+            <p style="color: deepskyblue; text-align: center;font-style: italic;font-weight: 600;">Walk through of our lanes</p>
+        </div>
+    </header>
+
+    <div class="timeline">
+        <div class="container">
+            <div class="timeline-item">
+<!--                <div class="timeline-img"></div>-->
+
+                <div class="timeline-content js--fadeInLeft">
+                    <h2>First Sight of Angel</h2>
+                    <div class="date">1 June</div>
+                    <p>First time meet her at a temple. Starting of a great mission. ✈️</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+
+<!--                <div class="timeline-img"></div>-->
+
+                <div class="timeline-content js--fadeInRight">
+<!--                    <div class="timeline-img-header">-->
+
+<!--                    </div>-->
+                    <div class="date">18 June</div>
+                    <h2>Instagram Pre Request</h2>
+                    <p>Gave a request on Instagram and deleted it on next morning. Due to not accepting disappointed. 🙁</p>
+                </div>
+
+            </div>
+
+            <div class="timeline-item">
+
+<!--                <div class="timeline-img"></div>-->
+
+                <div class="timeline-content js--fadeInLeft">
+                    <div class="date">23 June</div>
+                    <h2>Request Accepted!</h2>
+                    <p>Gave request again. Finally, got accepted by her. 🥰</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+
+<!--                <div class="timeline-img"></div>-->
+
+                <div class="timeline-content js--fadeInRight">
+                    <h2>Ponnu Pakura Day</h2>
+                    <div class="date">11 July</div>
+                    <p>Went to her home first time. My Second Home🏠</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+
+<!--                <div class="timeline-img"></div>-->
+
+                <div class="timeline-content js--fadeInLeft">
+<!--                    <div class="timeline-img-header">-->
+                        <h2>Engagement Saree Shopping</h2>
+<!--                    </div>-->
+                    <div class="date">13 July</div>
+                    <p>Bought engagement saree for her. Kinda first outing with her. 🛍 <br /> Had First Lunch together 🍽 </p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+
+                <!--                <div class="timeline-img"></div>-->
+
+                <div class="timeline-content js--fadeInLeft">
+                    <div class="date">17 July</div>
+                    <h2>First Outing!</h2>
+                    <p>Went out for shopping again. <br /> Started with Sweetest. First ride together. 🏍</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+
+                <!--                <div class="timeline-img"></div>-->
+
+                <div class="timeline-content js--fadeInRight">
+                    <h2>Fraud</h2>
+                    <div class="date">21 July</div>
+                    <p>Received a new nickname for me. I know it's not special for me. But still it's new for me. 😉</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+
+                <!--                <div class="timeline-img"></div>-->
+
+                <div class="timeline-content js--fadeInLeft">
+                    <div class="date">22 July</div>
+                    <h2>Flames Matching!</h2>
+                    <p>Had our flames matching, turns to be Friend. A good couples are good friends 💝</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+
+                <!--                <div class="timeline-img"></div>-->
+
+                <div class="timeline-content js--fadeInRight">
+                    <h2>Shopping with Her family</h2>
+                    <div class="date">24 July</div>
+                    <p>Received a new nickname for me. I know it's not special for me. But still it's new for me. 😉</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+
+                <!--                <div class="timeline-img"></div>-->
+
+                <div class="timeline-content js--fadeInLeft">
+                    <div class="date">27 July</div>
+                    <h2>Wrong Route 🚏</h2>
+                    <p>May be, came a long way to see me and mentioned as wrong route, or it's a real wrong route.
+                        <br /> Lets be Fake wrong route itself for my mind only 😁</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+
+                <!--                <div class="timeline-img"></div>-->
+
+                <div class="timeline-content js--fadeInRight">
+                    <h2>Dinner Date 💟</h2>
+                    <div class="date">29 July</div>
+                    <p>Had our first dinner date @ Pedreno's Global Fusion Restaurant 🍴</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+
+                <!--                <div class="timeline-img"></div>-->
+
+                <div class="timeline-content js--fadeInLeft">
+                    <div class="date">30 July</div>
+                    <h2>Couple's drive</h2>
+                    <p>Groom's shopping for engagement. A2B. First Drive as couple alone. 👩‍❤️‍👨</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+
+                <!--                <div class="timeline-img"></div>-->
+
+                <div class="timeline-content js--fadeInRight">
+                    <h2>WooooW Factor</h2>
+                    <div class="date">31 July</div>
+                    <p>Got blown away on seeing her in engagement saree with blouse made only for her ❣️</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+
+                <!--                <div class="timeline-img"></div>-->
+
+                <div class="timeline-content js--fadeInLeft">
+                    <div class="date">7 August</div>
+                    <h2>Blue Black 💙🖤</h2>
+                    <p>Moment, I understand, I was started to miss her presence. 😕</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+
+                <!--                <div class="timeline-img"></div>-->
+
+                <div class="timeline-content js--fadeInRight">
+                    <h2>A Longgg Dateee</h2>
+                    <div class="date">10 August</div>
+                    <p>Happened many things, Picked her up, messed up to tie the necklace and office bunk 🤯</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+
+                <!--                <div class="timeline-img"></div>-->
+
+                <div class="timeline-content js--fadeInLeft">
+                    <div class="date">12 August</div>
+                    <h2>Left you all alone at night</h2>
+                    <p>Literally should have waited just to pick you up 😔</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+
+                <!--                <div class="timeline-img"></div>-->
+
+                <div class="timeline-content js--fadeInRight">
+                    <h2>A Trip of my life</h2>
+                    <div class="date">13 August</div>
+                    <p>Revisited her childhood memories. Had new memories too 🥳</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+
+                <!--                <div class="timeline-img"></div>-->
+
+                <div class="timeline-content js--fadeInLeft">
+                    <div class="date">14 August</div>
+                    <h2>Journey changes day</h2>
+                    <p>Till now not yet figured out, why it's changed from that day 🤔</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+
+                <!--                <div class="timeline-img"></div>-->
+
+                <div class="timeline-content js--fadeInRight">
+                    <h2>First Insta Post</h2>
+                    <div class="date">21 August</div>
+                    <p>Written and posted first my scribble for her 💌</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+
+                <!--                <div class="timeline-img"></div>-->
+
+                <div class="timeline-content js--fadeInLeft">
+                    <div class="date">6 September</div>
+                    <h2>Star Biryani 🍲!</h2>
+                    <p>Saloon time. Done with Hair. Had her first hairstyle video. My Heart just stumbled ❤️‍🩹</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+
+                <!--                <div class="timeline-img"></div>-->
+
+                <div class="timeline-content js--fadeInRight">
+                    <h2>Ring ceremony 🫶</h2>
+                    <div class="date">7 September</div>
+                    <p>Engagement of Poet & Softie 💍</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+
+                <!--                <div class="timeline-img"></div>-->
+
+                <div class="timeline-content js--fadeInLeft">
+                    <div class="date">11 September</div>
+                    <h2>Shop for KD's Bday</h2>
+                    <p>Always enjoys shopping with her, this time shopped with Pachai killi 💚</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+
+                <!--                <div class="timeline-img"></div>-->
+
+                <div class="timeline-content js--fadeInRight">
+                    <h2>Ammu`s Birthday</h2>
+                    <div class="date">17 September</div>
+                    <p>Nice day. But could have been much better, will follow it next year. 🎂</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+
+                <!--                <div class="timeline-img"></div>-->
+
+                <div class="timeline-content js--fadeInLeft">
+                    <div class="date">19 September</div>
+                    <h2>11'o Hug 🤗</h2>
+                    <p>Had the crispest hug 😍</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+
+                <!--                <div class="timeline-img"></div>-->
+
+                <div class="timeline-content js--fadeInRight">
+                    <h2>Shopping with Her family</h2>
+                    <div class="date">25 September</div>
+                    <p>Received a new nickname for me. I know it's not special for me. But still it's new for me. 😉</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+
+                <!--                <div class="timeline-img"></div>-->
+
+                <div class="timeline-content js--fadeInLeft">
+                    <div class="date">27 September</div>
+                    <h2>Cuttie Pie 🤪</h2>
+                    <p>Saw a different version of her on that day.. Wish I could see and keep her like that mostly 🥹</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+
+                <!--                <div class="timeline-img"></div>-->
+
+                <div class="timeline-content js--fadeInRight">
+                    <h2>Travel Companion</h2>
+                    <div class="date">28 September</div>
+                    <p>Received my life's first greeting card aka proposal kind ha card...<br /> Showed my life in different view "North View" 🧭</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+
+                <!--                <div class="timeline-img"></div>-->
+
+                <div class="timeline-content js--fadeInLeft">
+                    <div class="date">2 October</div>
+                    <h2>Diadaaam!! 💜</h2>
+                    <p>Reception Shopping. Until then never saw a purple angel 👼.. <br /> WoooooW Factor 🤩</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+
+                <!--                <div class="timeline-img"></div>-->
+
+                <div class="timeline-content js--fadeInRight">
+                    <h2>Missed a Hug 🤐</h2>
+                    <div class="date">5 October</div>
+                    <p>Told 2 things about me and told her to adapt to her. Not my style but told her to do so. 😣 <br /> Missed a hug.. </p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+
+                <!--                <div class="timeline-img"></div>-->
+
+                <div class="timeline-content js--fadeInLeft">
+                    <div class="date">9 October</div>
+                    <h2>First Kiss</h2>
+                    <p>Totally missed out day... But with at-least she ended with a high time kiss.. 😘</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+
+                <!--                <div class="timeline-img"></div>-->
+
+                <div class="timeline-content js--fadeInRight">
+                    <h2>Almost touched her heart 💗</h2>
+                    <div class="date">14 October</div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+
+                <!--                <div class="timeline-img"></div>-->
+
+                <div class="timeline-content js--fadeInLeft">
+                    <div class="date">9, 12, 15 October</div>
+                    <h2>Serious of Disappointed by me 😢!</h2>
+                    <p>Totally gave disappointed to her for all 3 days. Spoiled her mood totally.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+
+                                <div class="timeline-img"></div>
+
+                <div class="timeline-content js--fadeInRight">
+                    <h2>Will be continued...</h2>
+                    <div class="date">Rest of our life...</div>
+                    <p>Will happily flow the trip rest of my life. 😇</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="sec-3" id="memories">
+    <a class="custom-btn btn-11" href="https://photos.app.goo.gl/PAFjtb46Z4XWu1B69" target="_blank">
+        Click to view Visual Memories of DB💝GG<div class="dot"></div>
+    </a>
+</div>
+<footer style="margin: 200px 0px 0px;height: 500px">
+    <div class="flex-container" style="background: transparent">
+        <div class="unit">
+            <div class="flex-container">
+                <span class="text">I</span>
+                <div class="heart">
+                    <div class="heart-piece-0"></div>
+                    <div class="heart-piece-1"></div>
+                    <div class="heart-piece-2"></div>
+                    <div class="heart-piece-3"></div>
+                    <div class="heart-piece-4"></div>
+                    <div class="heart-piece-5"></div>
+                    <div class="heart-piece-6"></div>
+                    <div class="heart-piece-7"></div>
+                    <div class="heart-piece-8"></div>
+                </div>
+                <span class="text">U</span>
+            </div>
+            <p>Ammu</p>
+            <p>#8th_Of_12</p>
+        </div>
+    </div>
+</footer>
+<script src="https://code.jquery.com/jquery-3.6.1.slim.min.js" integrity="sha256-w8CvhFs7iHNVUtnSP0YKEg00p9Ih13rlL9zGqvLdePA=" crossorigin="anonymous"></script>
+<script>
+        let text = document.getElementById('text');
+        let bird1 = document.getElementById('bird1');
+        let bird2 = document.getElementById('bird2');
+<!--        let btn = document.getElementById('btn');-->
+        let rocks = document.getElementById('rocks');
+        let forest = document.getElementById('forest');
+        let water = document.getElementById('water');
+        let header = document.getElementById('header');
+
+        window.addEventListener('scroll', function() {
+            let value = window.scrollY;
+
+            text.style.top = 50 + value * -.1 + '%';
+            bird2.style.top = value * -1.5 + 'px';
+            bird2.style.left = value * 2 + 'px';
+            bird1.style.top = value * -1.5 + 'px';
+            bird1.style.left = value * -5 + 'px';
+<!--            btn.style.marginTop = value * 1.5 + 'px';-->
+            rocks.style.top = value * -.12 + 'px';
+            forest.style.top = value * .25 + 'px';
+            header.style.top = value * .5 + 'px';
+        })
+
+</script>
+</body>
+</html>
